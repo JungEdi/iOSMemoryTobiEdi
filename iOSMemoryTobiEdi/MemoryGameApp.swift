@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct iOSMemoryTobiEdiApp: App {
+struct MemoryGameApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EmojiMemoryGameView(viewModel: EmojiMemoryGameViewModel())
         }
     }
 }

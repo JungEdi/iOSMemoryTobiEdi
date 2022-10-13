@@ -7,19 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		790B33B628F84CAF004D4F00 /* iOSMemoryTobiEdiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B33B528F84CAF004D4F00 /* iOSMemoryTobiEdiApp.swift */; };
-		790B33B828F84CAF004D4F00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B33B728F84CAF004D4F00 /* ContentView.swift */; };
+		790B33B628F84CAF004D4F00 /* MemoryGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B33B528F84CAF004D4F00 /* MemoryGameApp.swift */; };
 		790B33BA28F84CB1004D4F00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790B33B928F84CB1004D4F00 /* Assets.xcassets */; };
 		790B33BE28F84CB1004D4F00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 790B33BD28F84CB1004D4F00 /* Preview Assets.xcassets */; };
+		790B33C528F84D84004D4F00 /* MemoryGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B33C428F84D84004D4F00 /* MemoryGameModel.swift */; };
+		790B33C728F84E05004D4F00 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B33C628F84E05004D4F00 /* EmojiMemoryGameView.swift */; };
+		790B33C928F84E11004D4F00 /* MemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B33C828F84E11004D4F00 /* MemoryGameViewModel.swift */; };
+		790B33CB28F84E69004D4F00 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790B33CA28F84E69004D4F00 /* ArrayExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		790B33B228F84CAF004D4F00 /* iOSMemoryTobiEdi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMemoryTobiEdi.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		790B33B528F84CAF004D4F00 /* iOSMemoryTobiEdiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMemoryTobiEdiApp.swift; sourceTree = "<group>"; };
-		790B33B728F84CAF004D4F00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		790B33B528F84CAF004D4F00 /* MemoryGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameApp.swift; sourceTree = "<group>"; };
 		790B33B928F84CB1004D4F00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		790B33BB28F84CB1004D4F00 /* iOSMemoryTobiEdi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSMemoryTobiEdi.entitlements; sourceTree = "<group>"; };
 		790B33BD28F84CB1004D4F00 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		790B33C428F84D84004D4F00 /* MemoryGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameModel.swift; sourceTree = "<group>"; };
+		790B33C628F84E05004D4F00 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
+		790B33C828F84E11004D4F00 /* MemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameViewModel.swift; sourceTree = "<group>"; };
+		790B33CA28F84E69004D4F00 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +57,13 @@
 		790B33B428F84CAF004D4F00 /* iOSMemoryTobiEdi */ = {
 			isa = PBXGroup;
 			children = (
-				790B33B528F84CAF004D4F00 /* iOSMemoryTobiEdiApp.swift */,
-				790B33B728F84CAF004D4F00 /* ContentView.swift */,
+				790B33CA28F84E69004D4F00 /* ArrayExt.swift */,
+				790B33B528F84CAF004D4F00 /* MemoryGameApp.swift */,
 				790B33B928F84CB1004D4F00 /* Assets.xcassets */,
-				790B33BB28F84CB1004D4F00 /* iOSMemoryTobiEdi.entitlements */,
 				790B33BC28F84CB1004D4F00 /* Preview Content */,
+				790B33C428F84D84004D4F00 /* MemoryGameModel.swift */,
+				790B33C628F84E05004D4F00 /* EmojiMemoryGameView.swift */,
+				790B33C828F84E11004D4F00 /* MemoryGameViewModel.swift */,
 			);
 			path = iOSMemoryTobiEdi;
 			sourceTree = "<group>";
@@ -139,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				790B33B828F84CAF004D4F00 /* ContentView.swift in Sources */,
-				790B33B628F84CAF004D4F00 /* iOSMemoryTobiEdiApp.swift in Sources */,
+				790B33C728F84E05004D4F00 /* EmojiMemoryGameView.swift in Sources */,
+				790B33CB28F84E69004D4F00 /* ArrayExt.swift in Sources */,
+				790B33C928F84E11004D4F00 /* MemoryGameViewModel.swift in Sources */,
+				790B33B628F84CAF004D4F00 /* MemoryGameApp.swift in Sources */,
+				790B33C528F84D84004D4F00 /* MemoryGameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
