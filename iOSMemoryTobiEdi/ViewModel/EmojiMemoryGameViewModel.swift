@@ -7,30 +7,30 @@
 
 import Foundation
 
-class EmojiMemoryGameViewModel: ObservableObject {
+class EmojiMemoryGameViewModel: MemoryGameViewModel{
     
     init() {
         model = EmojiMemoryGameViewModel.createMemoryGame()
     }
     
-    @Published private var model: MemoryGame<String>
+    @Published private var model: MemoryGameModel<String>
     
-    static func createMemoryGame()->MemoryGame<String> {
+    static func createMemoryGame()->MemoryGameModel<String> {
         let emojis: Array<String> = ["🙈","🙉", "🙊", "🏎","😃", "🧘🏻‍♂️", "🌍", "🌦️", "🍞", "🚗", "📞", "🎉", "❤️", "🍆", "🍑"]
-        return  MemoryGame<String>(numberOfPairsOfCards: emojis.count, cardContentFactory: { pairIndex in
+        return  MemoryGameModel<String>(numberOfPairsOfCards: emojis.count, cardContentFactory: { pairIndex in
             return emojis[pairIndex]
         })
     }
     
     // MARK: - Access to the Model
     
-    var cards: Array<MemoryGame<String>.Card> {
+    var cards: Array<MemoryGameModel<String>.Card> {
         return model.cards
     }
     
     // MARK: - Intents
     
-    func choose(card: MemoryGame<String>.Card) {
+    func choose(card: MemoryGameModel<String>.Card) {
         model.choose(card: card)
     }
     

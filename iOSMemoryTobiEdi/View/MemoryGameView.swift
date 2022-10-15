@@ -8,22 +8,42 @@
 import SwiftUI
 
 struct MemoryGameView: View {
-    
+    @State private var showingSheet = false
+    @State private var gameStarted = false
     @ObservedObject var viewModel: EmojiMemoryGameViewModel
     
     var body: some View {
-        ScrollView {
-        
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]){
-                ForEach(viewModel.cards) { card in
-                    CardView(card: card)
-                        .aspectRatio(3/4, contentMode: .fit)
-                        .onTapGesture {
-                        self.viewModel.choose(card: card)
-                    }
+        VStack{
+            if !gameStarted {
+                MenuSheetButton()
+            } else {
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]){
+                        ForEach(viewModel.cards) { card in
+                            CardView(card: card)
+                                .aspectRatio(3/4, contentMode: .fit)
+                                .onTapGesture {
+                                    self.viewModel.choose(card: card)
+                                }
+                        }
+                    }.padding()
                 }
-            }.padding()
+            }
         }
+    }
+    
+    fileprivate func MenuSheetButton() -> some View {
+        Button("Start game") {
+            showingSheet.toggle()
+        }
+            .sheet(isPresented: $showingSheet) {
+                SheetView(viewModel: viewModel)
+            }
+    }
+    
+    fileprivate func toggleSheet() -> Void {
+        showingSheet.toggle();
+        
     }
 }
 
@@ -31,7 +51,7 @@ struct MemoryGameView: View {
 
 struct CardView: View {
     
-    var card: MemoryGame<String>.Card
+    var card: MemoryGameModel<String>.Card
     
     var body: some View {
         GeometryReader{geometry in
