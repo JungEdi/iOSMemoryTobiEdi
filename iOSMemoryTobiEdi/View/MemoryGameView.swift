@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MemoryGameView: View {
     @State private var showingSheet = false
-    @State private var gameStarted = false
+    @State private var gameStarted = true
     @ObservedObject var viewModel: EmojiMemoryGameViewModel
     
     var body: some View {
