@@ -15,7 +15,7 @@ class EmojiMemoryGameViewModel: MemoryGameViewModel{
     
     @Published private var model: MemoryGameModel<String>
     
-    static func createMemoryGame()->MemoryGameModel<String> {
+    private static func createMemoryGame()->MemoryGameModel<String> {
         let emojis: Array<String> = ["🙈","🙉", "🙊", "🏎","😃", "🧘🏻‍♂️", "🌍", "🌦️", "🍞", "🚗", "📞", "🎉", "❤️", "🍆", "🍑"]
         return  MemoryGameModel<String>(numberOfPairsOfCards: emojis.count, cardContentFactory: { pairIndex in
             return emojis[pairIndex]

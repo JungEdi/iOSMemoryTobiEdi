@@ -15,6 +15,8 @@
 		796DE55328F8547000F0FC97 /* iOSMemoryTobiEdiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DE55228F8547000F0FC97 /* iOSMemoryTobiEdiApp.swift */; };
 		796DE55728F8547100F0FC97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796DE55628F8547100F0FC97 /* Assets.xcassets */; };
 		796DE55A28F8547100F0FC97 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796DE55928F8547100F0FC97 /* Preview Assets.xcassets */; };
+		79DB112429016BBB00376889 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB112329016BBB00376889 /* Pie.swift */; };
+		79DB11262901710800376889 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB11252901710800376889 /* Cardify.swift */; };
 		79F5B47128FAFFE90083CAE0 /* MemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F5B47028FAFFE90083CAE0 /* MemoryGameViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		796DE55228F8547000F0FC97 /* iOSMemoryTobiEdiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSMemoryTobiEdiApp.swift; sourceTree = "<group>"; };
 		796DE55628F8547100F0FC97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		796DE55928F8547100F0FC97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		79DB112329016BBB00376889 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		79DB11252901710800376889 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		79F5B47028FAFFE90083CAE0 /* MemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +104,7 @@
 		79F5B47428FB00FF0083CAE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				79DB112329016BBB00376889 /* Pie.swift */,
 				7921D3C928F85C7400BB96A6 /* MemoryGameView.swift */,
 				7900AB1A28F8605900492FB1 /* SheetView.swift */,
 			);
@@ -109,6 +114,7 @@
 		79F5B47528FB01080083CAE0 /* Ext */ = {
 			isa = PBXGroup;
 			children = (
+				79DB11252901710800376889 /* Cardify.swift */,
 				7921D3C728F8596B00BB96A6 /* ArrayExt.swift */,
 			);
 			path = Ext;
@@ -186,6 +192,8 @@
 			files = (
 				7921D3CC28F85C8F00BB96A6 /* MemoryGameModel.swift in Sources */,
 				796DE55328F8547000F0FC97 /* iOSMemoryTobiEdiApp.swift in Sources */,
+				79DB112429016BBB00376889 /* Pie.swift in Sources */,
+				79DB11262901710800376889 /* Cardify.swift in Sources */,
 				7921D3CA28F85C7400BB96A6 /* MemoryGameView.swift in Sources */,
 				79F5B47128FAFFE90083CAE0 /* MemoryGameViewModel.swift in Sources */,
 				7921D3CE28F85CA600BB96A6 /* EmojiMemoryGameViewModel.swift in Sources */,

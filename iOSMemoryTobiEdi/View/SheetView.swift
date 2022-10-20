@@ -40,7 +40,7 @@ struct SheetView: View {
           Text(gameType.rawValue)
         }
       }
-          .pickerStyle(.segmented)
+      .pickerStyle(.segmented).padding(10)
     }
   }
 
@@ -53,7 +53,8 @@ struct SheetView: View {
         }
       }
     }
-        .pickerStyle(.segmented)
+        .pickerStyle(.segmented).padding(10)
+        
   }
 }
 
