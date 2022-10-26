@@ -8,29 +8,51 @@
 import SwiftUI
 
 struct SheetView: View {
-  let viewModel: any MemoryGameViewModel
+  let viewModel: EmojiMemoryGameViewModel
   @State private var selectedGameType: GameType = .emoji
   @State private var selectedDifficulty: Difficulty = .medium
 
   @Environment(\.dismiss) var dismissSheet
 
   var body: some View {
-    VStack {
-      Spacer()
-      GameTypePicker()
-      DifficultyPicker()
-      Spacer()
-      StartButton()
-      Spacer()
+      NavigationView {
+        VStack {
+          Spacer()
+          GameTypePicker()
+          DifficultyPicker()
+          Spacer()
+          /*StartButton()*/
+            NavigationLink(destination: Game()) {
+                                  Text("Start")
+                              }
+          Spacer()
+        }
     }
   }
 
   private func StartButton() -> some View {
-    Button("Start") {
+      
+      Button("Start") {
+        print("test \(viewModel.gameStarted)")
+        viewModel.gameStarted = true
+        print("test \(viewModel.gameStarted)")
       dismissSheet()
     }
         .font(.title)
   }
+    private func Game() -> some View {
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]){
+                ForEach(viewModel.cards) { card in
+                    CardView(card: card)
+                        .aspectRatio(3/4, contentMode: .fit)
+                        .onTapGesture {
+                            self.viewModel.choose(card: card)
+                        }
+                }
+            }.padding()
+        }
+    }
 
   private func GameTypePicker() -> some View {
     VStack {
