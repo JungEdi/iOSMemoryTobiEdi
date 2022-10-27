@@ -8,4 +8,5 @@
 import Foundation
 
 protocol MemoryGameViewModel : ObservableObject {
+    var gameStarted: Bool { get set }
 }

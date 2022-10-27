@@ -14,7 +14,7 @@ struct MemoryGameView: View {
     
     var body: some View {
         VStack{
-            if !gameStarted {
+            if !viewModel.gameStarted {
                 MenuSheetButton()
             } else {
                 ScrollView {

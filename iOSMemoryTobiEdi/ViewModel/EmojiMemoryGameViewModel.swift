@@ -22,6 +22,8 @@ class EmojiMemoryGameViewModel: MemoryGameViewModel{
         })
     }
     
+    var gameStarted = false;
+    
     // MARK: - Access to the Model
     
     var cards: Array<MemoryGameModel<String>.Card> {
