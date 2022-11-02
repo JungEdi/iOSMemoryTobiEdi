@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SheetView: View {
-  let viewModel: EmojiMemoryGameViewModel
+  let viewModel: StartGameViewModel
   @State private var selectedGameType: GameType = .emoji
   @State private var selectedDifficulty: Difficulty = .medium
 
@@ -21,11 +21,6 @@ struct SheetView: View {
           GameTypePicker()
           DifficultyPicker()
           Spacer()
-          /*StartButton()*/
-            NavigationLink(destination: Game()) {
-                                  Text("Start")
-                              }
-          Spacer()
         }
     }
   }
@@ -33,26 +28,10 @@ struct SheetView: View {
   private func StartButton() -> some View {
       
       Button("Start") {
-        print("test \(viewModel.gameStarted)")
-        viewModel.gameStarted = true
-        print("test \(viewModel.gameStarted)")
       dismissSheet()
     }
         .font(.title)
   }
-    private func Game() -> some View {
-        ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]){
-                ForEach(viewModel.cards) { card in
-                    CardView(card: card)
-                        .aspectRatio(3/4, contentMode: .fit)
-                        .onTapGesture {
-                            self.viewModel.choose(card: card)
-                        }
-                }
-            }.padding()
-        }
-    }
 
   private func GameTypePicker() -> some View {
     VStack {
@@ -82,7 +61,7 @@ struct SheetView: View {
 
 struct SheetView_Previews: PreviewProvider {
   static var previews: some View {
-    SheetView(viewModel: EmojiMemoryGameViewModel())
+    SheetView(viewModel: StartGameViewModel())
   }
 }
 
