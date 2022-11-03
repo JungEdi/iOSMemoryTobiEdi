@@ -45,7 +45,7 @@ struct ShapeMemoryGameView: View {
 
 struct ShapeMemoryGameView_Previews: PreviewProvider {
     static var previews: some View {
-        let game = ShapeMemoryGameViewModel(difficulty: .easy)
+        let game = ShapeMemoryGameViewModel(screenSize: UIScreen.main.bounds.size, difficulty: .easy)
         game.choose(card: game.cards[0])
         return ShapeMemoryGameView(viewModel: game)
     }

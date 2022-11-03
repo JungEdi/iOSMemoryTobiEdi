@@ -45,7 +45,7 @@ struct EmojiMemoryGameView: View {
 
 struct EmojiMemoryGameView_Previews: PreviewProvider {
     static var previews: some View {
-        let game = EmojiMemoryGameViewModel(difficulty: .easy)
+        let game = EmojiMemoryGameViewModel(screenSize: UIScreen.main.bounds.size, difficulty: .easy)
         game.choose(card: game.cards[0])
         return EmojiMemoryGameView(viewModel: game)
     }

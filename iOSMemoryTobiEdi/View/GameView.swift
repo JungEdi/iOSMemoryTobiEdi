@@ -17,16 +17,17 @@ struct GameView: View {
     }
 
     private func Game() -> some View {
-        switch viewModel.gameType {
-        case .emoji:
-            return AnyView(EmojiMemoryGameView(
-                viewModel: EmojiMemoryGameViewModel(
-                    difficulty: viewModel.difficulty)))
-        case .shapes:
-            return AnyView(ShapeMemoryGameView(
-                viewModel: ShapeMemoryGameViewModel(
-                    difficulty: viewModel.difficulty)
-            ))
+        GeometryReader { geometry in
+            switch viewModel.gameType {
+            case .emoji:
+                return AnyView(EmojiMemoryGameView(
+                    viewModel: EmojiMemoryGameViewModel(screenSize: geometry.size, difficulty: viewModel.difficulty)))
+            case .shapes:
+                return AnyView(ShapeMemoryGameView(
+                    viewModel: ShapeMemoryGameViewModel(screenSize: geometry.size,
+                        difficulty: viewModel.difficulty)
+                ))
+            }
         }
     }
 
