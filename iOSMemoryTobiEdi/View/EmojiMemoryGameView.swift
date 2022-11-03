@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MemoryGameView: View {
+struct EmojiMemoryGameView: View {
     
     @ObservedObject
     var viewModel: EmojiMemoryGameViewModel
@@ -41,10 +41,10 @@ struct MemoryGameView: View {
     private let cardAspectRatio = CGFloat(0.7)
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct EmojiMemoryGameView_Previews: PreviewProvider {
     static var previews: some View {
-        let game = EmojiMemoryGameViewModel()
+        let game = EmojiMemoryGameViewModel(difficulty: .easy)
         game.choose(card: game.cards[0])
-        return MemoryGameView(viewModel: game)
+        return EmojiMemoryGameView(viewModel: game)
     }
 }

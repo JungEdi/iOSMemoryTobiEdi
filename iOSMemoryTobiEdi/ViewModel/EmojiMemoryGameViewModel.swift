@@ -9,7 +9,7 @@ import Foundation
 
 class EmojiMemoryGameViewModel: ObservableObject {
     
-    init() {
+    init(difficulty: Difficulty) {
         model = EmojiMemoryGameViewModel.createMemoryGame()
     }
     

@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		154622555B359D241AC88B1C /* ShapeMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15462AEA61942EE439A5D2A6 /* ShapeMemoryGameView.swift */; };
 		1546227F8CEDFAD8E5F868F6 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15462155DBA332601D302607 /* enums.swift */; };
 		1546237E6DA7A8F5F941819D /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15462C2FEFEC77A4D2D5657C /* Arrow.swift */; };
+		154623CE580DBF96A9141138 /* ShapeMemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154620B8A734CC19F40D8436 /* ShapeMemoryGameViewModel.swift */; };
 		1ABBCBCD2912E0080064B59F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBCBCC2912E0080064B59F /* CardView.swift */; };
 		1ABBCBCF2912E4100064B59F /* StartGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBCBCE2912E4100064B59F /* StartGameView.swift */; };
 		1ABBCBD32912E4AC0064B59F /* StartGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBCBD22912E4AC0064B59F /* StartGameViewModel.swift */; };
 		1ABBCBD52912E4B70064B59F /* StartGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBCBD42912E4B70064B59F /* StartGameModel.swift */; };
 		7900AB1B28F8605900492FB1 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900AB1A28F8605900492FB1 /* SheetView.swift */; };
 		7921D3C828F8596B00BB96A6 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921D3C728F8596B00BB96A6 /* ArrayExt.swift */; };
-		7921D3CA28F85C7400BB96A6 /* MemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921D3C928F85C7400BB96A6 /* MemoryGameView.swift */; };
+		7921D3CA28F85C7400BB96A6 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921D3C928F85C7400BB96A6 /* EmojiMemoryGameView.swift */; };
 		7921D3CC28F85C8F00BB96A6 /* MemoryGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921D3CB28F85C8F00BB96A6 /* MemoryGameModel.swift */; };
 		7921D3CE28F85CA600BB96A6 /* EmojiMemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921D3CD28F85CA600BB96A6 /* EmojiMemoryGameViewModel.swift */; };
 		796DE55328F8547000F0FC97 /* iOSMemoryTobiEdiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DE55228F8547000F0FC97 /* iOSMemoryTobiEdiApp.swift */; };
@@ -27,7 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		154620B8A734CC19F40D8436 /* ShapeMemoryGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeMemoryGameViewModel.swift; sourceTree = "<group>"; };
 		15462155DBA332601D302607 /* enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
+		15462AEA61942EE439A5D2A6 /* ShapeMemoryGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeMemoryGameView.swift; sourceTree = "<group>"; };
 		15462C2FEFEC77A4D2D5657C /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		1ABBCBCC2912E0080064B59F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		1ABBCBCE2912E4100064B59F /* StartGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameView.swift; sourceTree = "<group>"; };
@@ -35,7 +39,7 @@
 		1ABBCBD42912E4B70064B59F /* StartGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameModel.swift; sourceTree = "<group>"; };
 		7900AB1A28F8605900492FB1 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		7921D3C728F8596B00BB96A6 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
-		7921D3C928F85C7400BB96A6 /* MemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameView.swift; sourceTree = "<group>"; };
+		7921D3C928F85C7400BB96A6 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		7921D3CB28F85C8F00BB96A6 /* MemoryGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameModel.swift; sourceTree = "<group>"; };
 		7921D3CD28F85CA600BB96A6 /* EmojiMemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameViewModel.swift; sourceTree = "<group>"; };
 		796DE54F28F8547000F0FC97 /* iOSMemoryTobiEdi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSMemoryTobiEdi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +115,7 @@
 				7921D3CD28F85CA600BB96A6 /* EmojiMemoryGameViewModel.swift */,
 				79F5B47028FAFFE90083CAE0 /* MemoryGameViewModel.swift */,
 				1ABBCBD22912E4AC0064B59F /* StartGameViewModel.swift */,
+				154620B8A734CC19F40D8436 /* ShapeMemoryGameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -129,10 +134,11 @@
 			isa = PBXGroup;
 			children = (
 				79DB112329016BBB00376889 /* Pie.swift */,
-				7921D3C928F85C7400BB96A6 /* MemoryGameView.swift */,
+				7921D3C928F85C7400BB96A6 /* EmojiMemoryGameView.swift */,
 				1ABBCBCE2912E4100064B59F /* StartGameView.swift */,
 				7900AB1A28F8605900492FB1 /* SheetView.swift */,
 				1ABBCBCC2912E0080064B59F /* CardView.swift */,
+				15462AEA61942EE439A5D2A6 /* ShapeMemoryGameView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,7 +228,7 @@
 				796DE55328F8547000F0FC97 /* iOSMemoryTobiEdiApp.swift in Sources */,
 				79DB112429016BBB00376889 /* Pie.swift in Sources */,
 				79DB11262901710800376889 /* Cardify.swift in Sources */,
-				7921D3CA28F85C7400BB96A6 /* MemoryGameView.swift in Sources */,
+				7921D3CA28F85C7400BB96A6 /* EmojiMemoryGameView.swift in Sources */,
 				79F5B47128FAFFE90083CAE0 /* MemoryGameViewModel.swift in Sources */,
 				7921D3CE28F85CA600BB96A6 /* EmojiMemoryGameViewModel.swift in Sources */,
 				7900AB1B28F8605900492FB1 /* SheetView.swift in Sources */,
@@ -231,6 +237,8 @@
 				1ABBCBD52912E4B70064B59F /* StartGameModel.swift in Sources */,
 				1546237E6DA7A8F5F941819D /* Arrow.swift in Sources */,
 				1546227F8CEDFAD8E5F868F6 /* enums.swift in Sources */,
+				154622555B359D241AC88B1C /* ShapeMemoryGameView.swift in Sources */,
+				154623CE580DBF96A9141138 /* ShapeMemoryGameViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

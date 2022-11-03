@@ -11,6 +11,12 @@ class StartGameViewModel: ObservableObject {
 
     @Published private var model: StartGameModel
 
+    init() {
+        model = StartGameModel()
+    }
+
+
+    // MARK: - Access to the Model
     var difficulty: Difficulty {
         get {
             model.difficulty
@@ -19,6 +25,7 @@ class StartGameViewModel: ObservableObject {
             model.difficulty = newValue
         }
     }
+
     var gameType: GameType {
         get {
             model.gameType
@@ -26,9 +33,5 @@ class StartGameViewModel: ObservableObject {
         set {
             model.gameType = newValue
         }
-    }
-
-    init() {
-        model = StartGameModel()
     }
 }
