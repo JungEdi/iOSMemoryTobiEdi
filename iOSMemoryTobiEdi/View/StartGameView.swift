@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StartGameView: View {
-    
+    @ObservedObject
     var viewModel = StartGameViewModel()
     @State private var showingSheet = false
     
@@ -17,8 +17,8 @@ struct StartGameView: View {
         NavigationView {
             VStack{
                 Spacer()
-                Text("Modus: \(viewModel.getGameModus())")
-                Text("Schwirigkeit: \(viewModel.getDifficultyLevel())")
+                Text("Modus: \(viewModel.gameType.rawValue)")
+                Text("Schwierigkeit: \(viewModel.difficulty.rawValue)")
                 Spacer()
                 MenuSheetButton()
                 Spacer()

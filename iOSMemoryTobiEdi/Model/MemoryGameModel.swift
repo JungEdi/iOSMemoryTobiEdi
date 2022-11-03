@@ -33,7 +33,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable{
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
                 }
-                self.cards[chosenIndex].isFaceUp = true
+                cards[chosenIndex].isFaceUp = true
             }
             else{
                 indexOfFaceUpCard = chosenIndex

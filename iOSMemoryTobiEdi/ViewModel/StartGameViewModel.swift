@@ -7,25 +7,28 @@
 
 import Foundation
 
-class StartGameViewModel : ObservableObject {
-    
+class StartGameViewModel: ObservableObject {
+
     @Published private var model: StartGameModel
-    
+
+    var difficulty: Difficulty {
+        get {
+            model.difficulty
+        }
+        set {
+            model.difficulty = newValue
+        }
+    }
+    var gameType: GameType {
+        get {
+            model.gameType
+        }
+        set {
+            model.gameType = newValue
+        }
+    }
+
     init() {
-        model = StartGameModel(difficultyLevel: 0, gameModus: 0)
-    }
-    
-    func setDifficultyLevel(difficultyLevel: Int){
-        model.difficultyLevel = difficultyLevel
-    }
-    func getDifficultyLevel() -> Int{
-        return model.difficultyLevel
-    }
-    
-    func setGameModus(gameModus: Int){
-        model.gameModus = gameModus
-    }
-    func getGameModus() -> Int{
-        return model.gameModus
+        model = StartGameModel()
     }
 }

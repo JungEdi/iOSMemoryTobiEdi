@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1546227F8CEDFAD8E5F868F6 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15462155DBA332601D302607 /* enums.swift */; };
 		1546237E6DA7A8F5F941819D /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15462C2FEFEC77A4D2D5657C /* Arrow.swift */; };
 		1ABBCBCD2912E0080064B59F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBCBCC2912E0080064B59F /* CardView.swift */; };
 		1ABBCBCF2912E4100064B59F /* StartGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBCBCE2912E4100064B59F /* StartGameView.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15462155DBA332601D302607 /* enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 		15462C2FEFEC77A4D2D5657C /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		1ABBCBCC2912E0080064B59F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		1ABBCBCE2912E4100064B59F /* StartGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				7921D3CB28F85C8F00BB96A6 /* MemoryGameModel.swift */,
 				1ABBCBD42912E4B70064B59F /* StartGameModel.swift */,
+				15462155DBA332601D302607 /* enums.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				1ABBCBCD2912E0080064B59F /* CardView.swift in Sources */,
 				1ABBCBD52912E4B70064B59F /* StartGameModel.swift in Sources */,
 				1546237E6DA7A8F5F941819D /* Arrow.swift in Sources */,
+				1546227F8CEDFAD8E5F868F6 /* enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
