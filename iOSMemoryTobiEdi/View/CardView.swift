@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct CardView: View {
+struct CardView<CardContent>: View where CardContent: Equatable  {
 
-    var card: MemoryGameModel<String>.Card
+    var card: MemoryGameModel<CardContent>.Card
+    let contentDisplay: (CardContent) -> any View
 
     var body: some View {
         GeometryReader { geometry in
@@ -46,7 +47,7 @@ struct CardView: View {
                 }
                     .padding(5)
                     .opacity(opacity)
-                Text(card.content)
+                AnyView(contentDisplay(card.content))
                     .font(Font.system(size: fontSize(for: size)))
                     .rotationEffect(Angle(degrees: card.isMatched ? rotationEnd : rotationStart))
                     .animation(card.isMatched ? Animation.linear(duration: contentRotationDuration).repeatForever(autoreverses: false) : .default)
@@ -79,7 +80,7 @@ struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiMemoryGameViewModel(screenSize: UIScreen.main.bounds.size, difficulty: .easy)
         game.choose(card: game.cards[0])
-        return CardView(card: game.cards[0])
+        return CardView(card: game.cards[0]) { content in Text(content) }
     }
 }
 

@@ -17,7 +17,7 @@ struct EmojiMemoryGameView: View {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: minimumColumnWidth))]) {
                     ForEach(viewModel.cards) { card in
-                        CardView(card: card)
+                        CardView(card: card) { content in Text(content) }
                             .aspectRatio(cardAspectRatio, contentMode: .fit)
                             .onTapGesture {
                                 withAnimation(.linear(duration: rotationDuration)) {
