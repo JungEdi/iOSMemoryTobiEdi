@@ -1,5 +1,5 @@
 //
-//  StartGameModel.swift
+//  GameSettingsModel.swift
 //  iOSMemoryTobiEdi
 //
 //  Created by Edi Jung on 02.11.22.

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StartGameView: View {
     @ObservedObject
-    var viewModel = StartGameViewModel()
+    var viewModel = GameSettingsViewModel()
     @State private var showingSheet = false
 
     var body: some View {
@@ -21,7 +21,7 @@ struct StartGameView: View {
                 Spacer()
                 MenuSheetButton()
                 Spacer()
-                NavigationLink(destination: Game()) {
+                NavigationLink(destination: GameView(viewModel: viewModel)) {
                     Text("Start Game")
                 }
                 Spacer()
@@ -29,17 +29,8 @@ struct StartGameView: View {
         }
     }
 
-    private func Game() -> some View {
-        switch viewModel.gameType {
-        case .emoji:
-            return AnyView(EmojiMemoryGameView(viewModel: EmojiMemoryGameViewModel(difficulty: viewModel.difficulty)))
-        case .shapes:
-            return AnyView(ShapeMemoryGameView(viewModel: ShapeMemoryGameViewModel(difficulty: viewModel.difficulty)))
-        }
-    }
 
-
-    fileprivate func MenuSheetButton() -> some View {
+    private func MenuSheetButton() -> some View {
         Button("Change Settings") {
             showingSheet.toggle()
         }

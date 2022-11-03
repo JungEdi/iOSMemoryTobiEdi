@@ -1,5 +1,5 @@
 //
-//  StartGameViewModel.swift
+//  GameSettingsViewModel.swift
 //  iOSMemoryTobiEdi
 //
 //  Created by Edi Jung on 02.11.22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StartGameViewModel: ObservableObject {
+class GameSettingsViewModel: ObservableObject {
 
     @Published private var model: StartGameModel
 

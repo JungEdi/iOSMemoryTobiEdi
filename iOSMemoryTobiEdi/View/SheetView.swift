@@ -10,14 +10,12 @@ import SwiftUI
 struct SheetView: View {
 
     @ObservedObject
-    var viewModel: StartGameViewModel
+    var viewModel: GameSettingsViewModel
 
-    private var selectedGameType: GameType {
-        viewModel.gameType
-    }
-   private var selectedDifficulty: Difficulty {
-        viewModel.difficulty
-    }
+
+    // The state is written to the model as soon, as the  "Startgame" button is pressed, otherwise there will be no card shuffle animation
+    @State private var selectedGameType: GameType = GameType.emoji
+    @State private var selectedDifficulty: Difficulty = Difficulty.medium
 
     @Environment(\.dismiss) var dismissSheet
 
@@ -37,6 +35,8 @@ struct SheetView: View {
 
         Button("Start") {
             dismissSheet()
+            viewModel.gameType = selectedGameType
+            viewModel.difficulty = selectedDifficulty
         }
             .font(.title)
     }
@@ -44,7 +44,7 @@ struct SheetView: View {
     private func GameTypePicker() -> some View {
         VStack {
             Text("Welches Kartenset möchtest du spielen?")
-            Picker("Spieltypen", selection: $viewModel.gameType) {
+            Picker("Spieltypen", selection: $selectedGameType) {
                 ForEach(GameType.allCases) { gameType in
                     Text(gameType.rawValue)
                 }
@@ -56,7 +56,7 @@ struct SheetView: View {
     private func DifficultyPicker() -> some View {
         VStack {
             Text("Wähle den Schwierigkeitsgrad aus:")
-            Picker("Schwierigkeit", selection: $viewModel.difficulty) {
+            Picker("Schwierigkeit", selection: $selectedDifficulty) {
                 ForEach(Difficulty.allCases) { difficulty in
                     Text(difficulty.rawValue)
                 }
@@ -69,7 +69,7 @@ struct SheetView: View {
 
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
-        SheetView(viewModel: StartGameViewModel())
+        SheetView(viewModel: GameSettingsViewModel())
     }
 }
 

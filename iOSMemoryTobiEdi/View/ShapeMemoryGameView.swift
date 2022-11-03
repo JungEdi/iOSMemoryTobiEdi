@@ -29,12 +29,12 @@ struct ShapeMemoryGameView: View {
                     .foregroundColor(Color.blue)
             }
                 .padding(.horizontal)
-            Button(action: {
+        }
+            .onAppear {
                 withAnimation(.easeInOut) {
                     viewModel.resetGame()
                 }
-            }, label: { Text("New Game") })
-        }
+            }
     }
 
     // MARK: - Drawing Constants

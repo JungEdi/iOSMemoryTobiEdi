@@ -8,33 +8,35 @@
 import SwiftUI
 
 struct EmojiMemoryGameView: View {
-    
+
     @ObservedObject
     var viewModel: EmojiMemoryGameViewModel
-    
+
     var body: some View {
-        VStack{
+        VStack {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: minimumColumnWidth))]) {
-                    ForEach(viewModel.cards){ card in
+                    ForEach(viewModel.cards) { card in
                         CardView(card: card)
                             .aspectRatio(cardAspectRatio, contentMode: .fit)
                             .onTapGesture {
                                 withAnimation(.linear(duration: rotationDuration)) {
-                                    self.viewModel.choose(card: card)
+                                    viewModel.choose(card: card)
                                 }
-                        }
+                            }
                     }
-                }.foregroundColor(Color.blue)
-            }.padding(.horizontal)
-            Button(action: {
-                withAnimation(.easeInOut){
-                    self.viewModel.resetGame()
                 }
-            }, label: {Text("New Game")})
+                    .foregroundColor(Color.blue)
+            }
+                .padding(.horizontal)
         }
+            .onAppear {
+                withAnimation(.easeInOut) {
+                    viewModel.resetGame()
+                }
+            }
     }
-    
+
     // MARK: - Drawing Constants
     private let minimumColumnWidth = Double(65)
     private let rotationDuration = Double(0.75)
