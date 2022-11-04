@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct Cardify: AnimatableModifier {
-    
+    private let isStillFaceUp: Double = 90
     var isFaceUp: Bool {
-        rotation < 90
+        rotation < isStillFaceUp
     }
     
-    var rotation: Double
+    private var rotation: Double
     
     init(isFaceUp: Bool) {
         rotation = isFaceUp ? rotationUp : rotationDown

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CardView<CardContent>: View where CardContent: Equatable  {
 
-    var card: MemoryGameModel<CardContent>.Card
-    let contentDisplay: (CardContent) -> any View
+    let card: MemoryGameModel<CardContent>.Card
+    let displayContent: (CardContent) -> any View
 
     var body: some View {
         GeometryReader { geometry in
@@ -23,7 +23,6 @@ struct CardView<CardContent>: View where CardContent: Equatable  {
 
     private func startBonusTimeAnimation() {
         animatedBonusRemaining = card.bonusRemaining
-        print(animatedBonusRemaining)
         withAnimation(.linear(duration: card.bonusTimeRemaining)) {
             animatedBonusRemaining = 0
         }
@@ -45,9 +44,9 @@ struct CardView<CardContent>: View where CardContent: Equatable  {
                             endAngle: Angle(degrees: -card.bonusTimeRemaining * rotationEnd + rotationOffset), clockwise: true)
                     }
                 }
-                    .padding(5)
+                    .padding(circlePadding)
                     .opacity(opacity)
-                AnyView(contentDisplay(card.content))
+                AnyView(displayContent(card.content))
                     .font(Font.system(size: fontSize(for: size)))
                     .rotationEffect(Angle(degrees: card.isMatched ? rotationEnd : rotationStart))
                     .animation(card.isMatched ? Animation.linear(duration: contentRotationDuration).repeatForever(autoreverses: false) : .default)
@@ -73,6 +72,7 @@ struct CardView<CardContent>: View where CardContent: Equatable  {
     private let rotationStart = Double.zero
     private let rotationEnd = Double(360)
     private let contentRotationDuration = Double(1)
+    private let circlePadding = Double(5)
 
 }
 

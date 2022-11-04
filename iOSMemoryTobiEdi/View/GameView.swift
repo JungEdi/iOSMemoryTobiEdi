@@ -31,7 +31,6 @@ struct GameView: View {
         }
     }
 
-
     private func NewGameSheetButton() -> some View {
         Button("New Game") {
             showingSheet.toggle()

@@ -11,7 +11,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
 
     let difficulty: Difficulty
     let screenSize: CGSize
-    let maxCardCount: Int
+    private let maxCardCount: Int
 
     private(set) var cards: Array<Card>
 
@@ -30,7 +30,6 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     }
 
     mutating func choose(card: Card) {
-        print("card chosen: \(card)")
         if let chosenIndex = cards.firstIndx(matching: card),
            !cards[chosenIndex].isFaceUp,
            !cards[chosenIndex].isMatched {

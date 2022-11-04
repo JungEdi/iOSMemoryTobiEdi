@@ -16,13 +16,13 @@ struct StartGameView: View {
         NavigationView {
             VStack {
                 Spacer()
-                Text("Modus: \(viewModel.gameType.rawValue)")
-                Text("Schwierigkeit: \(viewModel.difficulty.rawValue)")
+                Text("\(mode) \(viewModel.gameType.rawValue)")
+                Text("\(difficulty) \(viewModel.difficulty.rawValue)")
                 Spacer()
                 MenuSheetButton()
                 Spacer()
                 NavigationLink(destination: GameView(viewModel: viewModel)) {
-                    Text("Start Game")
+                    Text(startGame)
                 }
                 Spacer()
             }
@@ -31,7 +31,7 @@ struct StartGameView: View {
 
 
     private func MenuSheetButton() -> some View {
-        Button("Change Settings") {
+        Button(changeSettings) {
             showingSheet.toggle()
         }
             .sheet(isPresented: $showingSheet) {
@@ -39,9 +39,16 @@ struct StartGameView: View {
             }
     }
 
-    fileprivate func toggleSheet() -> Void {
+    private func toggleSheet() -> Void {
         showingSheet.toggle();
     }
+
+    // MARK - Text constants
+    private let changeSettings = "Change Settings"
+    private let startGame = "Start Game"
+    private let difficulty = "Schwierigkeit: "
+    private let mode = "Modus:"
+
 }
 
 struct StartGameView_Previews: PreviewProvider {

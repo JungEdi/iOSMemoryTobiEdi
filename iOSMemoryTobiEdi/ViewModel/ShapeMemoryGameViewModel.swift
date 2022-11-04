@@ -5,32 +5,29 @@
 //  Created by Tobi Wyss on 13.10.22.
 //
 
-import Foundation
+import SwiftUI
 
 class ShapeMemoryGameViewModel: ObservableObject {
+    @Published private var model: MemoryGameModel<ShapeWrapper>
 
     init(screenSize: CGSize, difficulty: Difficulty) {
         model = ShapeMemoryGameViewModel.createMemoryGame(screenSize: screenSize, difficulty: difficulty)
     }
 
-    @Published private var model: MemoryGameModel<String>
-
-    static func createMemoryGame(screenSize: CGSize, difficulty: Difficulty) -> MemoryGameModel<String> {
-        let shapes: Array<String> = ["1", "2", "3", "4", "5", "6"]
-        return MemoryGameModel<String>(screenSize: screenSize, difficulty: difficulty, maxCardCount: shapes.count, cardContentFactory: { pairIndex in
+    private static func createMemoryGame(screenSize: CGSize, difficulty: Difficulty) -> MemoryGameModel<ShapeWrapper> {
+        let shapes: Array<ShapeWrapper> = ShapeGenerator().generateShapes()
+        return MemoryGameModel<ShapeWrapper>(screenSize: screenSize, difficulty: difficulty, maxCardCount: shapes.count, cardContentFactory: { pairIndex in
             shapes[pairIndex]
         })
     }
 
     // MARK: - Access to the Model
-
-    var cards: [MemoryGameModel<String>.Card] {
+    var cards: [MemoryGameModel<ShapeWrapper>.Card] {
         model.cards
     }
 
     // MARK: - Intents
-
-    func choose(card: MemoryGameModel<String>.Card) {
+    func choose(card: MemoryGameModel<ShapeWrapper>.Card) {
         model.choose(card: card)
     }
 

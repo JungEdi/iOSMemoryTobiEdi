@@ -10,8 +10,6 @@ import Foundation
 struct StartGameModel {
     var gameType: GameType = .emoji
     var difficulty: Difficulty = .medium
-
-
 }
 
 

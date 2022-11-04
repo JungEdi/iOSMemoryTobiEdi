@@ -12,7 +12,6 @@ struct SheetView: View {
     @ObservedObject
     var viewModel: GameSettingsViewModel
 
-
     // The state is written to the model as soon, as the  "Startgame" button is pressed, otherwise there will be no card shuffle animation
     @State private var selectedGameType: GameType = GameType.emoji
     @State private var selectedDifficulty: Difficulty = Difficulty.medium
@@ -33,7 +32,7 @@ struct SheetView: View {
 
     private func StartButton() -> some View {
 
-        Button("Start") {
+        Button(start) {
             dismissSheet()
             viewModel.gameType = selectedGameType
             viewModel.difficulty = selectedDifficulty
@@ -43,28 +42,39 @@ struct SheetView: View {
 
     private func GameTypePicker() -> some View {
         VStack {
-            Text("Welches Kartenset möchtest du spielen?")
-            Picker("Spieltypen", selection: $selectedGameType) {
+            Text(chooseGameType)
+            Picker(gameType, selection: $selectedGameType) {
                 ForEach(GameType.allCases) { gameType in
                     Text(gameType.rawValue)
                 }
             }
-                .pickerStyle(.segmented).padding(10)
+                .pickerStyle(.segmented).padding(pickerPadding)
         }
     }
 
     private func DifficultyPicker() -> some View {
         VStack {
-            Text("Wähle den Schwierigkeitsgrad aus:")
-            Picker("Schwierigkeit", selection: $selectedDifficulty) {
+            Text(chooseDifficultyLevel)
+            Picker(difficulty, selection: $selectedDifficulty) {
                 ForEach(Difficulty.allCases) { difficulty in
                     Text(difficulty.rawValue)
                 }
             }
         }
-            .pickerStyle(.segmented).padding(10)
+            .pickerStyle(.segmented).padding(pickerPadding)
 
     }
+
+
+    // MARK - Drawing constants
+    private let pickerPadding = Double(10)
+
+    // MARK - Text constants
+    private let chooseDifficultyLevel = "Wähle den Schwierigkeitsgrad aus:"
+    private let difficulty = "Schwierigkeit"
+    private let chooseGameType = "Welches Kartenset möchtest du spielen?"
+    private let gameType = "Spieltypen"
+    private let start = "Start"
 }
 
 struct SheetView_Previews: PreviewProvider {
