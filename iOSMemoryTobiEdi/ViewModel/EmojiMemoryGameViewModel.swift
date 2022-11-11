@@ -21,7 +21,8 @@ class EmojiMemoryGameViewModel: ObservableObject {
     @Published private var model: MemoryGameModel<String>
 
     static func createMemoryGame(screenSize: CGSize, difficulty: Difficulty) -> MemoryGameModel<String> {
-        let emojis: Array<String> = emojiCollections.randomElement() ?? food
+        //shuffled emojiCollection to get a Random Collection and then Shuffle the random Collection to get random Emojis
+        let emojis: Array<String> = emojiCollections.randomElement()?.shuffled() ?? food.shuffled()
         return MemoryGameModel<String>(screenSize: screenSize, difficulty: difficulty, maxCardCount: emojis.count, cardContentFactory: { pairIndex in
             emojis[pairIndex]
         })
@@ -41,5 +42,12 @@ class EmojiMemoryGameViewModel: ObservableObject {
 
     func resetGame() {
         model = EmojiMemoryGameViewModel.createMemoryGame(screenSize: model.screenSize, difficulty: model.difficulty)
+    }
+    
+    func getScore() -> Int {
+        model.score
+    }
+    func getHighScore() -> Int{
+        UserDefaults.standard.integer(forKey: "Score")
     }
 }

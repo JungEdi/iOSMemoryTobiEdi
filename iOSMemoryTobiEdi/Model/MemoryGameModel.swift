@@ -11,7 +11,11 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
 
     let difficulty: Difficulty
     let screenSize: CGSize
-    private let maxCardCount: Int
+    private var maxCardCount: Int
+    private(set) var score: Int = 0
+    
+    let defaults = UserDefaults.standard
+    private var matchCount = 0
 
     private(set) var cards: Array<Card>
 
@@ -28,8 +32,9 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
             }
         }
     }
-
+    
     mutating func choose(card: Card) {
+        var highScore = defaults.integer(forKey: "Score")
         if let chosenIndex = cards.firstIndx(matching: card),
            !cards[chosenIndex].isFaceUp,
            !cards[chosenIndex].isMatched {
@@ -38,6 +43,13 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
+                    score += Int( cards[chosenIndex].bonusTimeRemaining + cards[potentialMatchIndex].bonusTimeRemaining + 1) / 2;
+                    matchCount += 2
+                    print(matchCount)
+                    if(matchCount == cards.count && score > highScore){
+                        highScore = score
+                        defaults.set(highScore, forKey: "Score");
+                    }
                 }
                 cards[chosenIndex].isFaceUp = true
             } else {
@@ -64,7 +76,8 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     }
 
     private func numberOfCardPairs() -> Int {
-        let maxPairForScreen: Int = Int(screenSize.height / 50);
+        let size = screenSize.height > screenSize.width ? screenSize.height : screenSize.width - screenSize.width * 0.1
+        let maxPairForScreen: Int = Int(size / 50);
         let actualPairCount = {
             switch difficulty {
             case .easy: return maxPairForScreen / 3

@@ -11,10 +11,13 @@ struct StartGameView: View {
     @ObservedObject
     var viewModel = GameSettingsViewModel()
     @State private var showingSheet = false
-
+    
+    var score = UserDefaults.standard.integer(forKey: "Score")
+    
     var body: some View {
         NavigationView {
             VStack {
+                Text("\(highScore) \(score)")
                 Spacer()
                 Text("\(mode) \(viewModel.gameType.rawValue)")
                 Text("\(difficulty) \(viewModel.difficulty.rawValue)")
@@ -46,8 +49,10 @@ struct StartGameView: View {
     // MARK - Text constants
     private let changeSettings = "Change Settings"
     private let startGame = "Start Game"
-    private let difficulty = "Schwierigkeit: "
+    private let difficulty = "Schwierigkeit:"
+    private let emojiSet = "EmojiSet:"
     private let mode = "Modus:"
+    private let highScore = "High Score:"
 
 }
 

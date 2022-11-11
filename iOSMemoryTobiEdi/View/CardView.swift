@@ -42,6 +42,7 @@ struct CardView<CardContent>: View where CardContent: Equatable  {
                     } else {
                         Pie(startAngle: Angle(degrees: rotationStart + rotationOffset),
                             endAngle: Angle(degrees: -card.bonusTimeRemaining * rotationEnd + rotationOffset), clockwise: true)
+                        
                     }
                 }
                     .padding(circlePadding)

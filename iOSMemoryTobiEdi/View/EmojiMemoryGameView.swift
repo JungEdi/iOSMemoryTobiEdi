@@ -12,8 +12,10 @@ struct EmojiMemoryGameView: View {
     @ObservedObject
     var viewModel: EmojiMemoryGameViewModel
 
+
     var body: some View {
         VStack {
+            ScoreView()
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: minimumColumnWidth))]) {
                     ForEach(viewModel.cards) { card in
@@ -35,6 +37,15 @@ struct EmojiMemoryGameView: View {
                     viewModel.resetGame()
                 }
             }
+    }
+    
+    private func ScoreView() -> some View {
+        HStack{
+            Text("High Score: " + String(viewModel.getHighScore()))
+                .font(.system(size: 12))
+            Text("Current Score: " + String(viewModel.getScore()))
+                .font(.system(size: 24))
+        }
     }
 
     // MARK: - Drawing Constants

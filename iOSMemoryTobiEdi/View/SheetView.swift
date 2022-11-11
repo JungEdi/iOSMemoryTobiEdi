@@ -72,6 +72,8 @@ struct SheetView: View {
     // MARK - Text constants
     private let chooseDifficultyLevel = "Wähle den Schwierigkeitsgrad aus:"
     private let difficulty = "Schwierigkeit"
+    private let chooseEmojiSet = "Wähle ein EmojiSet aus:"
+    private let emojiSet = "EmojiSet"
     private let chooseGameType = "Welches Kartenset möchtest du spielen?"
     private let gameType = "Spieltypen"
     private let start = "Start"
