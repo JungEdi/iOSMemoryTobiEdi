@@ -34,13 +34,4 @@ class GameSettingsViewModel: ObservableObject {
             model.gameType = newValue
         }
     }
-    
-    var highscore: Int {
-        get {
-            model.highscore
-        }
-        set {
-            model.highscore = newValue
-        }
-    }
 }

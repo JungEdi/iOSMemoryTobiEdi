@@ -15,7 +15,8 @@ struct EmojiMemoryGameView: View {
 
     var body: some View {
         VStack {
-            ScoreView()
+            ScoreView(highScore: viewModel.highScore, currentScore: viewModel.score)
+                
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: minimumColumnWidth))]) {
                     ForEach(viewModel.cards) { card in
@@ -30,22 +31,13 @@ struct EmojiMemoryGameView: View {
                 }
                     .foregroundColor(Color.blue)
             }
-                .padding(.horizontal)
         }
+            .padding(.horizontal)
             .onAppear {
                 withAnimation(.easeInOut) {
                     viewModel.resetGame()
                 }
             }
-    }
-    
-    private func ScoreView() -> some View {
-        HStack{
-            Text("High Score: " + String(viewModel.getHighScore()))
-                .font(.system(size: 12))
-            Text("Current Score: " + String(viewModel.getScore()))
-                .font(.system(size: 24))
-        }
     }
 
     // MARK: - Drawing Constants

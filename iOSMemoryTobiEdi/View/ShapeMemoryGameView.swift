@@ -14,6 +14,7 @@ struct ShapeMemoryGameView: View {
 
     var body: some View {
         VStack {
+            ScoreView(highScore: viewModel.highScore, currentScore: viewModel.score)
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: minimumColumnWidth))]) {
                     ForEach(viewModel.cards) { card in
@@ -28,8 +29,8 @@ struct ShapeMemoryGameView: View {
                 }
                     .foregroundColor(Color.blue)
             }
-                .padding(.horizontal)
         }
+            .padding(.horizontal)
             .onAppear {
                 withAnimation(.easeInOut) {
                     viewModel.resetGame()

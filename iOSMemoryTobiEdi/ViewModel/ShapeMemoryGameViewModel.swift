@@ -25,6 +25,14 @@ class ShapeMemoryGameViewModel: ObservableObject {
     var cards: [MemoryGameModel<ShapeWrapper>.Card] {
         model.cards
     }
+    
+    var score: Int{
+        model.score
+    }
+    
+    var highScore: Int{
+        model.highScore
+    }
 
     // MARK: - Intents
     func choose(card: MemoryGameModel<ShapeWrapper>.Card) {

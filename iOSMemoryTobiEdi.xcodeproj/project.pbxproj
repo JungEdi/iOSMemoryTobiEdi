@@ -20,6 +20,7 @@
 		1ABBCBCF2912E4100064B59F /* StartGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBCBCE2912E4100064B59F /* StartGameView.swift */; };
 		1ABBCBD32912E4AC0064B59F /* GameSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBCBD22912E4AC0064B59F /* GameSettingsViewModel.swift */; };
 		1ABBCBD52912E4B70064B59F /* GameSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBCBD42912E4B70064B59F /* GameSettingsModel.swift */; };
+		1AED446B291FA0AF00C2FCDC /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AED446A291FA0AF00C2FCDC /* ScoreView.swift */; };
 		7900AB1B28F8605900492FB1 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7900AB1A28F8605900492FB1 /* SheetView.swift */; };
 		7921D3C828F8596B00BB96A6 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921D3C728F8596B00BB96A6 /* ArrayExt.swift */; };
 		7921D3CA28F85C7400BB96A6 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921D3C928F85C7400BB96A6 /* EmojiMemoryGameView.swift */; };
@@ -46,6 +47,7 @@
 		1ABBCBCE2912E4100064B59F /* StartGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameView.swift; sourceTree = "<group>"; };
 		1ABBCBD22912E4AC0064B59F /* GameSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsViewModel.swift; sourceTree = "<group>"; };
 		1ABBCBD42912E4B70064B59F /* GameSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsModel.swift; sourceTree = "<group>"; };
+		1AED446A291FA0AF00C2FCDC /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		7900AB1A28F8605900492FB1 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		7921D3C728F8596B00BB96A6 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
 		7921D3C928F85C7400BB96A6 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				1ABBCBCC2912E0080064B59F /* CardView.swift */,
 				15462AEA61942EE439A5D2A6 /* ShapeMemoryGameView.swift */,
 				1546214D6FA8FA48B90EB7B3 /* GameView.swift */,
+				1AED446A291FA0AF00C2FCDC /* ScoreView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				7921D3C828F8596B00BB96A6 /* ArrayExt.swift in Sources */,
 				1ABBCBCD2912E0080064B59F /* CardView.swift in Sources */,
 				1ABBCBD52912E4B70064B59F /* GameSettingsModel.swift in Sources */,
+				1AED446B291FA0AF00C2FCDC /* ScoreView.swift in Sources */,
 				1546237E6DA7A8F5F941819D /* Arrow.swift in Sources */,
 				1546227F8CEDFAD8E5F868F6 /* enums.swift in Sources */,
 				154622555B359D241AC88B1C /* ShapeMemoryGameView.swift in Sources */,

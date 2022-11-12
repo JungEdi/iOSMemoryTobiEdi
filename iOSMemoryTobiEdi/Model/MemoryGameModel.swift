@@ -13,6 +13,11 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     let screenSize: CGSize
     private var maxCardCount: Int
     private(set) var score: Int = 0
+    private let userDefaultHighScoreKey = "Highscore"
+    var highScore : Int {
+        defaults.integer(forKey: userDefaultHighScoreKey)
+    }
+    
     
     let defaults = UserDefaults.standard
     private var matchCount = 0
@@ -34,7 +39,6 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     }
     
     mutating func choose(card: Card) {
-        var highScore = defaults.integer(forKey: "Score")
         if let chosenIndex = cards.firstIndx(matching: card),
            !cards[chosenIndex].isFaceUp,
            !cards[chosenIndex].isMatched {
@@ -45,10 +49,8 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
                     cards[potentialMatchIndex].isMatched = true
                     score += Int( cards[chosenIndex].bonusTimeRemaining + cards[potentialMatchIndex].bonusTimeRemaining + 1) / 2;
                     matchCount += 2
-                    print(matchCount)
                     if(matchCount == cards.count && score > highScore){
-                        highScore = score
-                        defaults.set(highScore, forKey: "Score");
+                        defaults.set(score, forKey: userDefaultHighScoreKey);
                     }
                 }
                 cards[chosenIndex].isFaceUp = true

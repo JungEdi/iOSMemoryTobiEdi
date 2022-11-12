@@ -33,6 +33,14 @@ class EmojiMemoryGameViewModel: ObservableObject {
     var cards: [MemoryGameModel<String>.Card] {
         model.cards
     }
+    
+    var score: Int{
+        model.score
+    }
+    
+    var highScore: Int{
+        model.highScore
+    }
 
     // MARK: - Intents
 
@@ -42,12 +50,5 @@ class EmojiMemoryGameViewModel: ObservableObject {
 
     func resetGame() {
         model = EmojiMemoryGameViewModel.createMemoryGame(screenSize: model.screenSize, difficulty: model.difficulty)
-    }
-    
-    func getScore() -> Int {
-        model.score
-    }
-    func getHighScore() -> Int{
-        UserDefaults.standard.integer(forKey: "Score")
     }
 }
