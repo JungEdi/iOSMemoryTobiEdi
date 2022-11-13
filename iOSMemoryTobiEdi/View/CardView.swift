@@ -50,7 +50,8 @@ struct CardView<CardContent>: View where CardContent: Equatable  {
                 AnyView(displayContent(card.content))
                     .font(Font.system(size: fontSize(for: size)))
                     .rotationEffect(Angle(degrees: card.isMatched ? rotationEnd : rotationStart))
-                    .animation(card.isMatched ? Animation.linear(duration: contentRotationDuration).repeatForever(autoreverses: false) : .default)
+                    .animation(card.isMatched ? Animation.linear(duration: contentRotationDuration)
+                        .repeatForever(autoreverses: false) : .default, value: card.isMatched)
             }
                 .cardify(isFaceUp: card.isFaceUp)
                 .transition(.scale)
@@ -62,9 +63,10 @@ struct CardView<CardContent>: View where CardContent: Equatable  {
     private let opacity = Double(0.4)
     private let cornerRadius = CGFloat(10)
     private let edgeLineWidth = CGFloat(3)
+    private let fontResizeFactor = 0.7
 
     private func fontSize(for size: CGSize) -> CGFloat {
-        min(size.width, size.height) * 0.7
+        min(size.width, size.height) * fontResizeFactor
     }
 
     private let startAngleConstant = Double(0 - 90)
